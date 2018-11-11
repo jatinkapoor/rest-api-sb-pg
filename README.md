@@ -2,16 +2,13 @@
 rest api using spring boot and postgres
 
 
-###Usage
+### Usage
 
 ```
 curl GET http://localhost:8080/account?email=roger.federer@email.com
 
 ```
-
-####
-
-###Sample Response
+### Sample Response
 
 ```json 
 [
