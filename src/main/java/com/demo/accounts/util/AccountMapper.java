@@ -1,25 +1,26 @@
 package com.demo.accounts.util;
 
 import com.demo.accounts.domain.*;
+import com.demo.accounts.repository.*;
 import java.util.*;
 import org.springframework.stereotype.*;
 
 @Component
 public class AccountMapper {
 	
-	public List<AccountResponse> mapToAccountResponse(List<Account> accounts) {
+	public List<Account> mapToAccountResponse(List<AccountDAO> accountDAOList) {
 		
-		List<AccountResponse> accountResponses = new ArrayList<>();
-		accounts.stream().forEach(account -> {
-			AccountResponse accountResponse = new AccountResponse();
-			accountResponse.setName(account.getFirstName() + " " + account.getLastName());
-			accountResponse.setEmail(account.getEmail());
-			accountResponse.setId(account.getId());
-			accountResponse.setAddress(account.getAddress());
-			accountResponses.add(accountResponse);
+		List<Account> accountList = new ArrayList<>();
+		accountDAOList.stream().forEach(accountDAO -> {
+			Account account = new Account();
+			account.setName(accountDAO.getFirstName() + " " + accountDAO.getLastName());
+			account.setEmail(accountDAO.getEmail());
+			account.setId(accountDAO.getId());
+			account.setAddress(accountDAO.getAddress());
+			accountList.add(account);
 		});
 		
-		return accountResponses;
+		return accountList;
 	}
 	
 }

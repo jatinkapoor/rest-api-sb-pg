@@ -14,8 +14,8 @@ public class AccountControlller {
 	AccountService accountService;
 	
 	@RequestMapping(value = "/account", method = RequestMethod.GET)
-	public ResponseEntity<List<AccountResponse>> getAccounts(@RequestParam String email) {
+	public ResponseEntity<List<Account>> getAccounts(@RequestParam String email) {
 		
-		return ResponseEntity.ok().body(accountService.findAccountsByEmail(email));
+		return ResponseEntity.ok().body(accountService.getAccountsByEmail(email));
 	}
 }

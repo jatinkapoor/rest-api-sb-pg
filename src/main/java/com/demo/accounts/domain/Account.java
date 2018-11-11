@@ -1,27 +1,20 @@
 package com.demo.accounts.domain;
 
-import javax.persistence.*;
+import com.fasterxml.jackson.annotation.*;
 import lombok.*;
 
 @Data
-@Entity
-@Table(schema = "accounts", name = "account")
 public class Account {
 	
-	@Id
-	@GeneratedValue
-	@Column(name="id")
-	Long id;
+	@JsonProperty("id")
+	private Long id;
 	
-	@Column(name="first_name")
-	String firstName;
+	@JsonProperty("name")
+	private String name;
 	
-	@Column(name = "last_name")
-	String lastName;
+	@JsonProperty("address")
+	private String address;
 	
-	@Column(name="email")
-	String email;
-	
-	@Column(name="address")
-	String address;
+	@JsonProperty("email_address")
+	private String email;
 }

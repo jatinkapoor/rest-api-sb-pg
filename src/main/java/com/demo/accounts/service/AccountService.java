@@ -1,6 +1,6 @@
 package com.demo.accounts.service;
 
-import com.demo.accounts.domain.*;
+import com.demo.accounts.domain.Account;
 import com.demo.accounts.repository.*;
 import com.demo.accounts.util.*;
 import java.util.*;
@@ -16,9 +16,9 @@ public class AccountService {
 	@Autowired
 	AccountMapper accountMapper;
 	
-	public List<AccountResponse> findAccountsByEmail(String email) {
-		List<Account> accounts = accountRepository.findByEmail(email);
-		List<AccountResponse> accountResponses = accountMapper.mapToAccountResponse(accounts);
-		return accountResponses;
+	public List<Account> getAccountsByEmail(String email) {
+		List<AccountDAO> accountDAOList = accountRepository.findAccountsByEmail(email);
+		List<Account> accountList = accountMapper.mapToAccountResponse(accountDAOList);
+		return accountList;
 	}
 }
