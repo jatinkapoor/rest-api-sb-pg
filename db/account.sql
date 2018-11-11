@@ -1,7 +1,3 @@
--- noinspection SqlNoDataSourceInspectionForFile
-
--- noinspection SqlNoDataSourceInspectionForFile
-
 DROP SCHEMA IF EXISTS accounts CASCADE;
 CREATE SCHEMA accounts AUTHORIZATION postgres;
 
