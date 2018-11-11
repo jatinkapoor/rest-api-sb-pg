@@ -7,7 +7,7 @@ import org.springframework.stereotype.*;
 @Component
 public class AccountMapper {
 	
-	public List<AccountResponse> maptoAccountResponse(List<Account> accounts) {
+	public List<AccountResponse> mapToAccountResponse(List<Account> accounts) {
 		
 		List<AccountResponse> accountResponses = new ArrayList<>();
 		accounts.stream().forEach(account -> {

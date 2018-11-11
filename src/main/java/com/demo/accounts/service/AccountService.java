@@ -18,7 +18,7 @@ public class AccountService {
 	
 	public List<AccountResponse> findAccountsByEmail(String email) {
 		List<Account> accounts = accountRepository.findByEmail(email);
-		List<AccountResponse> accountResponses = accountMapper.maptoAccountResponse(accounts);
+		List<AccountResponse> accountResponses = accountMapper.mapToAccountResponse(accounts);
 		return accountResponses;
 	}
 }
