@@ -17,6 +17,7 @@ public class AccountMapper {
 			account.setEmail(accountDAO.getEmail());
 			account.setId(accountDAO.getId());
 			account.setAddress(accountDAO.getAddress());
+			account.setPhone(accountDAO.getPhone());
 			accountList.add(account);
 		});
 		

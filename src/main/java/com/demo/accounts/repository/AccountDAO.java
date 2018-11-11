@@ -11,17 +11,20 @@ public class AccountDAO {
 	@Id
 	@GeneratedValue
 	@Column(name="id")
-	Long id;
+	private Long id;
 	
 	@Column(name="first_name")
-	String firstName;
+	private String firstName;
 	
 	@Column(name = "last_name")
-	String lastName;
+	private String lastName;
 	
 	@Column(name="email")
-	String email;
+	private String email;
 	
 	@Column(name="address")
-	String address;
+	private String address;
+
+	@Column(name="phone")
+	private String phone;
 }

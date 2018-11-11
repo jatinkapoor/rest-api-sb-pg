@@ -17,4 +17,7 @@ public class Account {
 	
 	@JsonProperty("email_address")
 	private String email;
+
+	@JsonProperty("phone")
+	private String phone;
 }

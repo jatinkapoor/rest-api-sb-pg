@@ -1,3 +1,7 @@
+-- noinspection SqlNoDataSourceInspectionForFile
+
+-- noinspection SqlNoDataSourceInspectionForFile
+
 DROP SCHEMA IF EXISTS accounts CASCADE;
 CREATE SCHEMA accounts AUTHORIZATION postgres;
 
@@ -12,7 +16,8 @@ CREATE TABLE accounts.account
   first_name character varying(32) COLLATE pg_catalog."default" NOT NULL,
   last_name character varying(32) COLLATE pg_catalog."default" NOT NULL,
   email character varying(32) COLLATE pg_catalog."default" NOT NULL,
-  address character varying(32) COLLATE pg_catalog."default" NOT NULL
+  address character varying(32) COLLATE pg_catalog."default" NOT NULL,
+  phone character varying(10)
 )
 WITH (
   OIDS = FALSE
@@ -23,8 +28,6 @@ ALTER TABLE accounts.account OWNER TO postgres;
 
 GRANT ALL ON TABLE accounts.account TO postgres;
 
-INSERT INTO accounts.account(first_name, email, last_name, address) values('roger', 'roger.federer@email.com','federer', '9823 Util Ave');
-INSERT INTO accounts.account(first_name, email, last_name, address) values('roger', 'roger.federer@email.com','federer', '2343 York Street');
-INSERT INTO accounts.account(first_name, email, last_name, address) values('roger', 'roger.federer@email.com','federer', '9823 Hamline Ave');
-
-
+INSERT INTO accounts.account(first_name, email, last_name, address, phone) values('roger', 'roger.federer@email.com','federer', '9823 Util Ave', 3235642345);
+INSERT INTO accounts.account(first_name, email, last_name, address, phone) values('roger', 'roger.federer@email.com','federer', '2343 York Street', 3235642345);
+INSERT INTO accounts.account(first_name, email, last_name, address, phone) values('roger', 'roger.federer@email.com','federer', '9823 Hamline Ave', null);
